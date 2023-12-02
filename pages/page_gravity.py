@@ -111,11 +111,28 @@ with form:
 
 # ---
 
-with chart:
-    chart_container = chart.container(border=False)
-    start_button = chart_container.button("Start Animation")
+    with chart:
+        chart_container = chart.container(border=False)
+        start_button = chart_container.button("Start Animation")
 
-    chart_placeholder = chart_container.empty()
+        show_points = False
+        show_field = False
 
-    if start_button:
-        animate_points(chart_placeholder, x_input_values, y_input_values, mass_input_values)
+        toggle_points, toggle_field, _ = chart_container.columns([3, 3, 1])
+
+        with toggle_points:
+            show_points_toggle = toggle_points.toggle("Show points", True)
+            if show_points_toggle:
+                show_points = True
+
+        with toggle_field:
+            show_field_toggle = toggle_field.toggle("Show gravitational field", False)
+            if show_field_toggle:
+                show_field = True
+
+        chart_container.slider("Time speed", 1, 100, 50)
+
+        chart_placeholder = chart_container.empty()
+
+        if start_button:
+            animate_points(chart_placeholder, x_input_values, y_input_values, mass_input_values)

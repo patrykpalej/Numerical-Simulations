@@ -33,8 +33,8 @@ def create_figure(x_vector, y_vector):
     fig.update_layout(xaxis=dict(range=[-1, 1]),
                       yaxis=dict(range=[-1, 1], showgrid=False, zeroline=False),
                       autosize=False,
-                      width=600*1.1,
-                      height=700*1.1,
+                      width=600*1,
+                      height=700*1,
                       )
 
     # fig.update_yaxes(

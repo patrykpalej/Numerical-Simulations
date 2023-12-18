@@ -23,24 +23,25 @@ def create_figure(simulator: GravitySimulator):
                                  x=np.linspace(-1, 1, length), y=np.linspace(-1, 1, length),
                                  colorscale='jet', opacity=0.3, showscale=False))
 
-    if simulator.show_trace:
-        trace_length = 15
-        for i in range(1, trace_length):
+    if simulator.show_trajectory:
+        trajectory_length = 45
+        for i in range(1, trajectory_length):
             try:
-                x_trace = simulator.x_history[-i]
-                y_trace = simulator.y_history[-i]
+                x_trajectory = simulator.x_history[-i]
+                y_trajectory = simulator.y_history[-i]
             except IndexError:
-                x_trace = None
-                y_trace = None
+                x_trajectory = None
+                y_trajectory = None
 
-            fig.add_trace(go.Scatter(x=x_trace, y=y_trace, mode='markers',
+            fig.add_trace(go.Scatter(x=x_trajectory, y=y_trajectory, mode='markers',
                                      marker=dict(size=sizes*0.8, color=color,
-                                                 opacity=(trace_length - i)/trace_length))
+                                                 opacity=(trajectory_length - i)/trajectory_length))
                           )
 
     scale = 1.1
-    fig.update_layout(xaxis=dict(range=[-1*scale, 1*scale]),
-                      yaxis=dict(range=[-1*scale, 1*scale], showgrid=False, zeroline=False),
+    fig.update_layout(xaxis=dict(range=[-1*scale, 1*scale], showticklabels=False),
+                      yaxis=dict(range=[-1*scale, 1*scale], showgrid=False, zeroline=False,
+                                 showticklabels=False),
                       autosize=False, width=600, height=700, title_text=title, title_x=0.5,
                       showlegend=False,
                       )

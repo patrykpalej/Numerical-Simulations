@@ -8,6 +8,7 @@ streamlit = "*"
 matplotlib = "*"
 plotly = "*"
 st-pages = "*"
+streamlit-extras = "*"
 
 [dev-packages]
 

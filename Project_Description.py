@@ -19,15 +19,25 @@ if __name__ == "__main__":
     st.title("Numerical simulations")
     st.markdown("## Project description")
 
-    st.markdown("""This project is (going to be) a set of numerical simulations regarding
+    st.markdown("""This project is a set of numerical simulations regarding
              various phenomena such as:""")
 
     with st.expander("Gravity"):
-        st.markdown("""In this simulation you choose initial conditions for a group of
-         material points ("planets"). You can also read them from file. Then you choose
-         what to show in the animation (planets, gravity field, trace of the planets) and
-         other details like whether or not to save logs or what to do in case of collision.
+        st.markdown("""In this simulation, you can set the initial conditions
+         for a group of material points, referred to as "planets." You have the option to input
+         these conditions manually or import them from a file. Once set, you can customize
+         the animation by selecting elements to display, such as the planets themselves, 
+         the gravity field, and the planets' trajectories. Additionally, you can choose to
+         save detailed logs and decide how the simulation should respond to collisions between 
+         the planets.
          """)
 
         st.markdown("""Note that both saving logs and saving initial conditions to file is
          possible only when running locally.""")
+
+    with st.expander("Humans vs. Zombies"):
+        st.markdown("""In this simulation, two groups of characters fight each other to survive.
+         Each character is defined by a set of characteristics, including their coordinates (x, y),
+         velocity, and power. When a zombie wins a fight, it transforms a human into
+         a new zombie. However, if a human prevails in the combat, they eliminate
+         their zombie opponent.""")

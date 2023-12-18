@@ -15,6 +15,11 @@ custom_css = """
     div.block-container {
         padding: 3rem;
    }
+   
+   div[class*="stSlider"] > label > div[data-testid="stMarkdownContainer"] > p {
+        font-size: 1.2rem;
+        }
+   
     .stNumberInput [data-testid=stNumberInputContainer]{
         width: 90%;
         margin-bottom: 1rem;
@@ -122,11 +127,11 @@ with form:
 
         with show_multiselect:
             selected_options = show_multiselect.multiselect(
-                "Show:", ["Planets", "Gravity", "Trace"], ["Planets"])
+                "Show:", ["Planets", "Gravity", "Trajectory"], ["Planets"])
 
             show_points = "Planets" in selected_options
             show_field = "Gravity" in selected_options
-            show_trace = "Trace" in selected_options
+            show_trajectory = "Trajectory" in selected_options
 
         with toggle_logs:
             logs = toggle_logs.toggle("Save logs", False)
@@ -151,7 +156,7 @@ with form:
         chart_placeholder = chart_container.empty()
 
         if start:
-            st.session_state.simulator = GravitySimulator(show_points, show_field, show_trace, logs,
+            st.session_state.simulator = GravitySimulator(show_points, show_field, show_trajectory, logs,
                                                           on_collision,
                                                           time_speed, x_input_values,
                                                           y_input_values,

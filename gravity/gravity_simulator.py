@@ -10,7 +10,7 @@ class GravitySimulator:
     REFERENCE_DELTA_T: float = 0.1  # default time step
     PROXIMITY_THRESHOLD = 0.05  # collision distance, may be interpreted as diamaeter of a planet
 
-    def __init__(self, show_points: bool, show_field: bool, show_trace: bool, save_logs: bool,
+    def __init__(self, show_points: bool, show_field: bool, show_trajectory: bool, save_logs: bool,
                  on_collision: str, time_speed: int, initial_x: np.array, initial_y: np.array,
                  mass_vector: np.array, initial_vx: np.array, initial_vy: np.array):
         self.counter = 0
@@ -18,7 +18,7 @@ class GravitySimulator:
 
         self.show_points = show_points
         self.show_field = show_field
-        self.show_trace = show_trace
+        self.show_trajectory = show_trajectory
         self.save_logs = save_logs
         self.on_collision = on_collision
         self.time_speed = time_speed

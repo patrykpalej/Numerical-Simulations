@@ -17,8 +17,8 @@ def create_figure(simulator, title):
                              marker=dict(size=10, color='green'))
                   )
 
-    fig.update_layout(xaxis=dict(range=[0, 100]),
-                      yaxis=dict(range=[0, 100], showgrid=False, zeroline=False),
+    fig.update_layout(xaxis=dict(range=[0, 100], showticklabels=False),
+                      yaxis=dict(range=[0, 100], showgrid=False, zeroline=False, showticklabels=False),
                       autosize=False, width=550, height=650, title_text=title, title_x=0.45,
                       showlegend=False,
                       )

@@ -13,8 +13,7 @@ def create_figure(simulator: GravitySimulator):
 
     if simulator.show_points:
         fig.add_trace(go.Scatter(x=simulator.x, y=simulator.y, mode='markers',
-                                 marker=dict(size=sizes, color=color))
-                      )
+                                 marker=dict(size=sizes, color=color)))
 
     if simulator.show_field:
         length = 100

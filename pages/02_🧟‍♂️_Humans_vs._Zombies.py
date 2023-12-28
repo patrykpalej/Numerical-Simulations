@@ -74,9 +74,14 @@ by **normal distributions** $N(\mu, \sigma)$. Select parameters of all distribut
         my_grid.markdown("---")
 
         # row 4 headers
-        my_grid.markdown("### Humans")
+        my_grid.markdown("""
+        <h3 style="color: orange">Humans</h3>
+        """, unsafe_allow_html=True)
+
         my_grid.empty()
-        my_grid.markdown("### Zombies")
+        my_grid.markdown("""
+                <h3 style="color: green">Zombies</h3>
+                """, unsafe_allow_html=True)
 
         # row 5
         mean_human_x = my_grid.number_input("$\mu$", 10, 90, 50, key='mean_human_x')
